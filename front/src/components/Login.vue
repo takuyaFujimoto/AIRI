@@ -23,7 +23,7 @@
 <script>
 export default {
   name: 'Login',
-  props: {},
+  props: {}
 }
 </script>
 <style scoped>
@@ -42,5 +42,4 @@ export default {
   margin-top: 60px;
   padding: 50px 250px;
 }
-
 </style>
