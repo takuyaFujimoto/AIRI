@@ -17,3 +17,25 @@ services:
     command: yarn run serve
     stdin_open: true
     tty: true
+  db-server:
+    build:
+      context: ../
+      dockerfile: docker/db-server/Dockerfile
+    container_name: "db"
+    environment:
+      MYSQL_DATABASE: AIRI_DB
+      MYSQL_ROOT_PASSWORD: "1234"
+      TZ: "Asia/Tokyo"
+    ports:
+      - "3306:3306"
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:4.7
+    container_name: phpmyadmin
+    environment:
+      - PMA_HOST=db
+      - PMA_VERBOSE=AIRI_DB
+      - PMA_PORT=3306
+    ports:
+      - "1234:80"
+    depends_on:
+      - "db-server"
