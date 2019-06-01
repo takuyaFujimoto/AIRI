@@ -8,7 +8,7 @@ CREATE table IF not exists `user` (
   `login_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `salt` char(8) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `is_vaild` tinyint(1) NOT NULL
+  `vaild` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='ユーザーマスター';
 
 CREATE TABLE `personal_information` (
@@ -28,7 +28,7 @@ CREATE TABLE `personal_information` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='個人情報';
 
 ---- insert ----
-INSERT INTO `user` (`id`, `login_name`, `password`, `salt`, `is_vaild`) VALUES
+INSERT INTO `user` (`id`, `login_name`, `password`, `salt`, `vaild`) VALUES
 (1, 'nagato', 'password4AACED889A78F502F4231775018135669C004B8102519E72A2F89B23C9B3A58B', 'Duy7abFT', 1),
 (2, 'mutu', 'passwordA1BCE7CC4D1CA0D2D6D28F175FF592D61850A42E96DB98C51E7E5D0D1178CAB6', 'LnPiMhLn', 1),
 (3, 'ise', 'passwordA0ABC283935F720A5713ADF7D64D53415E44A1FDF113916B8331AACAD184975E', 'LcjtErPk', 1),
