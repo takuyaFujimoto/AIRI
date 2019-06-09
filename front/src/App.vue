@@ -1,34 +1,32 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">userList</router-link> |
-      <router-link to="/login">login</router-link> |
-      <router-link to="/user-detail">userDetail</router-link> |
-      <router-link to="/user-create">userCreate</router-link> |
-      <router-link to="/sample">sample</router-link>
-    </div>
-    <router-view/>
+    <v-app>
+      <Progress v-if="isFatch" />
+      <Header v-if="isLogin" />
+      <router-view/>
+    </v-app>
   </div>
 </template>
 
+<script>
+import Progress from '@/components/parts/Progress.vue'
+import Header from '@/components/Header.vue'
+import { mapState } from 'vuex'
+
+export default {
+  name: 'app',
+  components: {
+    Progress,
+    Header
+  },
+  computed: {
+    ...mapState('app', [
+      'isFatch',
+      'isLogin'
+    ])
+  }
+}
+</script>
+
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
