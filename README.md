@@ -1,7 +1,9 @@
 # AIRI
 ### 作成中
-起動メモ
-1. gradleでbuildしてプロジェクトのjarファイルを作成(api直下でgradle build)
-2. dockerディレクトリに移動して `docker-compose build`
-3. `docker-compose up -d`で起動
-4. localhost:8080(api) localhost:3000(front) localhost:1234(phpMyAdmin)
+起動方法
+1. gitからリポジトリをクローン。
+2. apiディレクトリに移動して `./gradlew build`
+3. dockerディレクトリに移動して `docker-compose build`
+4. `docker-compose up -d`で起動
+5. localhost:3000にアクセス(ise password)
+6. データの確認localhost:1234にアクセス(root 1234)
