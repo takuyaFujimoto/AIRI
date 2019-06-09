@@ -14,7 +14,7 @@ export default {
     HelloWorld
   },
   data: () => ({
-    hoge: 'hoge',
+    hoge: 'TEST!!!',
     piyo: 'piyo',
     fuga: 'fuga'
   })
