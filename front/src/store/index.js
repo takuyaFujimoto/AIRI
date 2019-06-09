@@ -16,7 +16,7 @@ export default new Vuex.Store({
   strict: true,
   plugins: [createPersistedState({
     key: 'AIRI',
-    paths: ['app'],
+    paths: ['app', 'userList'],
     storage: window.sessionStorage
   })]
 })
