@@ -18,10 +18,10 @@ CREATE TABLE `personal_information` (
   `last_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `first_phonetic` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `last_phonetic` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `gender` enum('female','male','not_applicable','') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gender` enum('男性','女性','中性','') COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `age` int(2) NOT NULL,
-  `from` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `birthplace` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `hire_date` date NOT NULL,
   `rool` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tel` char(13) COLLATE utf8mb4_unicode_ci NOT NULL
@@ -50,27 +50,27 @@ INSERT INTO `user` (`id`, `login_name`, `password`, `salt`, `vaild`) VALUES
 (19, 'ooi', 'passwordF73C98F5AD312F56B9CAC42449D3712E91FEC55E27FA84A5941F9532E4F11082', 'WD8mside', 1),
 (20, 'kitagami', 'passwordDD70C3532A0807738374BE09591D1D61A5E57492A31486B1DD2C539192711643', 'bKuHp2Lz', 0);
 
-INSERT INTO `personal_information` (`id`, `user_id`, `first_name`, `last_name`, `first_phonetic`, `last_phonetic`, `gender`, `email`, `age`, `from`, `hire_date`, `rool`, `tel`) VALUES
-(1, 1, '日笠', '育代', 'ヒカサ', 'イクヨ', 'male', 'ikuyo.hikasa@example.com', 29, '石川', '2008-07-01', '平社員', '090-7770-5900'),
-(2, 2, '狭間', '恵里佳', 'ハザマ', 'エリカ', 'male', 'erika.hazama@example.com', 28, '香川', '2008-02-01', '部長', '070-5810-6953'),
-(3, 3, '森本', '竜也', 'モリモト', 'タツヤ', 'female', 'tatuya.morimoto@example.com', 30, '大阪', '2009-03-16', '平社員', '090-7850-2533'),
-(4, 4, '神尾', '啓子', 'カミオ', 'ケイコ', 'male', 'keiko.kamio@example.com', 32, '東京', '2006-04-10', '平社員', '090-4903-2425'),
-(5, 5, '山辺', '由起', 'ヤマベ', 'ユキ', 'male', 'yuki.yamabe@example.com', 39, '埼玉', '2007-09-12', '課長', '070-2480-2746'),
-(6, 6, '早乙女', '和孝', 'サオトメ', 'カズタカ', 'female', 'kazutaka.saotome@example.com', 42, '山口', '2005-09-08', '平社員', '070-7992-8015'),
-(7, 7, '植草', '塁', 'ウエクサ', 'ルイ', 'not_applicable', 'rui.uekusa@example.com', 26, '北海道', '2005-10-01', '課長', '080-6561-3696'),
-(8, 8, '堀口', '亜希子', 'ホリグチ', 'アキコ', 'male', 'akiko.horiguti@example.com', 29, '大阪', '2010-12-12', '課長', '090-6287-3104'),
-(9, 9, '南部', '正幸', 'ナンブ', 'マサユキ', 'female', 'masayuki.nannbu@example.com', 28, '兵庫', '2009-08-12', '平社員', '080-4299-5059'),
-(10, 10, '倉上', 'かなみ', 'クラカミ', 'カナミ', 'male', 'kanami.kurakami@example.com', 33, '愛媛', '2010-01-12', '平社員', '090-5746-4801'),
-(11, 11, '吉森', '勇希', 'ヨシモリ', 'ユウキ', 'female', 'yuuki.yosimori@example.com', 30, '秋田', '2011-02-01', '平社員', '090-8008-5231'),
-(12, 12, '古木', '雄治', 'フルキ', 'ユウジ', 'female', 'yuuji.furuki@example.com', 40, '京都', '2010-04-13', '係長', '090-7305-6987'),
-(13, 13, '萱原', '崇子', 'カミハラ', 'タカコ', 'male', 'takako.kamihara@example.com', 37, '山梨', '2009-10-01', '平社員', '080-7870-9789'),
-(14, 14, '荒谷', '新吾', 'アラタニ', 'シンゴ', 'female', 'sinngo.aratani@example.com', 36, '東京', '2006-12-01', '平社員', '090-3357-4797'),
-(15, 15, '廣橋', '瑛子', 'ヒロハシ', 'アキコ', 'male', 'akiko.hirohasi@example.com', 27, '高知', '2007-03-03', '係長', '080-8604-3774'),
-(16, 16, '宮瀬', '優季', 'ミヤセ', 'ユキ', 'not_applicable', 'yuki.miyase@example.com', 25, '鳥取', '2005-07-12', '係長', '090-3800-8174'),
-(17, 17, '佐山', '文彦', 'サヤマ', 'フミヒコ', 'female', 'fumihiko.sayama@example.com', 40, '和歌山', '2007-05-10', '平社員', '090-6900-8323'),
-(18, 18, '末次', '博司', 'スエツグ', 'ヒロシ', 'female', 'hirosi.suetugu@example.com', 43, '福岡', '2008-09-01', '係長', '080-2462-2816'),
-(19, 19, '桃井', '晋也', 'モモイ', 'シンヤ', 'female', 'sinnya.momoi@example.com', 30, '沖縄', '2009-11-14', '平社員', '090-7408-0753'),
-(20, 20, '成川', '春子', 'ナルサワ', 'ハルコ', 'male', 'haruko.narusawa@example.com', 24, '愛知', '2011-01-20', '平社員', '070-0561-1086');
+INSERT INTO `personal_information` (`id`, `user_id`, `first_name`, `last_name`, `first_phonetic`, `last_phonetic`, `gender`, `email`, `age`, `birthplace`, `hire_date`, `rool`, `tel`) VALUES
+(1, 1, '日笠', '育代', 'ヒカサ', 'イクヨ', '男性', 'ikuyo.hikasa@example.com', 29, '石川', '2008-07-01', '平社員', '090-7770-5900'),
+(2, 2, '狭間', '恵里佳', 'ハザマ', 'エリカ', '男性', 'erika.hazama@example.com', 28, '香川', '2008-02-01', '部長', '070-5810-6953'),
+(3, 3, '森本', '竜也', 'モリモト', 'タツヤ', '女性', 'tatuya.morimoto@example.com', 30, '大阪', '2009-03-16', '平社員', '090-7850-2533'),
+(4, 4, '神尾', '啓子', 'カミオ', 'ケイコ', '男性', 'keiko.kamio@example.com', 32, '東京', '2006-04-10', '平社員', '090-4903-2425'),
+(5, 5, '山辺', '由起', 'ヤマベ', 'ユキ', '男性', 'yuki.yamabe@example.com', 39, '埼玉', '2007-09-12', '課長', '070-2480-2746'),
+(6, 6, '早乙女', '和孝', 'サオトメ', 'カズタカ', '女性', 'kazutaka.saotome@example.com', 42, '山口', '2005-09-08', '平社員', '070-7992-8015'),
+(7, 7, '植草', '塁', 'ウエクサ', 'ルイ', '中性', 'rui.uekusa@example.com', 26, '北海道', '2005-10-01', '課長', '080-6561-3696'),
+(8, 8, '堀口', '亜希子', 'ホリグチ', 'アキコ', '男性', 'akiko.horiguti@example.com', 29, '大阪', '2010-12-12', '課長', '090-6287-3104'),
+(9, 9, '南部', '正幸', 'ナンブ', 'マサユキ', '女性', 'masayuki.nannbu@example.com', 28, '兵庫', '2009-08-12', '平社員', '080-4299-5059'),
+(10, 10, '倉上', 'かなみ', 'クラカミ', 'カナミ', '男性', 'kanami.kurakami@example.com', 33, '愛媛', '2010-01-12', '平社員', '090-5746-4801'),
+(11, 11, '吉森', '勇希', 'ヨシモリ', 'ユウキ', '女性', 'yuuki.yosimori@example.com', 30, '秋田', '2011-02-01', '平社員', '090-8008-5231'),
+(12, 12, '古木', '雄治', 'フルキ', 'ユウジ', '女性', 'yuuji.furuki@example.com', 40, '京都', '2010-04-13', '係長', '090-7305-6987'),
+(13, 13, '萱原', '崇子', 'カミハラ', 'タカコ', '男性', 'takako.kamihara@example.com', 37, '山梨', '2009-10-01', '平社員', '080-7870-9789'),
+(14, 14, '荒谷', '新吾', 'アラタニ', 'シンゴ', '女性', 'sinngo.aratani@example.com', 36, '東京', '2006-12-01', '平社員', '090-3357-4797'),
+(15, 15, '廣橋', '瑛子', 'ヒロハシ', 'アキコ', '男性', 'akiko.hirohasi@example.com', 27, '高知', '2007-03-03', '係長', '080-8604-3774'),
+(16, 16, '宮瀬', '優季', 'ミヤセ', 'ユキ', '中性', 'yuki.miyase@example.com', 25, '鳥取', '2005-07-12', '係長', '090-3800-8174'),
+(17, 17, '佐山', '文彦', 'サヤマ', 'フミヒコ', '女性', 'fumihiko.sayama@example.com', 40, '和歌山', '2007-05-10', '平社員', '090-6900-8323'),
+(18, 18, '末次', '博司', 'スエツグ', 'ヒロシ', '女性', 'hirosi.suetugu@example.com', 43, '福岡', '2008-09-01', '係長', '080-2462-2816'),
+(19, 19, '桃井', '晋也', 'モモイ', 'シンヤ', '女性', 'sinnya.momoi@example.com', 30, '沖縄', '2009-11-14', '平社員', '090-7408-0753'),
+(20, 20, '成川', '春子', 'ナルサワ', 'ハルコ', '男性', 'haruko.narusawa@example.com', 24, '愛知', '2011-01-20', '平社員', '070-0561-1086');
 
 ---- option ----
 ALTER TABLE `user`

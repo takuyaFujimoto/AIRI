@@ -1,7 +1,7 @@
 package example.entity
 
 data class PersonalInformation(
-  var id: Int,
+  var id: Int?,
   var user_id: Int,
   var first_name: String,
   var last_name: String,
@@ -10,7 +10,7 @@ data class PersonalInformation(
   var gender: String,
   var email: String,
   var age: Int,
-  var from: String,
+  var birthplace: String,
   var hire_date: String,
   var rool: String,
   var tel: String

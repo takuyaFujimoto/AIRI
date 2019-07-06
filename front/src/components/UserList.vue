@@ -11,7 +11,7 @@
         <td>{{ props.item.gender }}</td>
         <td>{{ props.item.email }}</td>
         <td>{{ props.item.age }}</td>
-        <td>{{ props.item.from }}</td>
+        <td>{{ props.item.birthplace }}</td>
         <td>{{ props.item.hireDate }}</td>
         <td>{{ props.item.rool }}</td>
         <td>{{ props.item.tel }}</td>

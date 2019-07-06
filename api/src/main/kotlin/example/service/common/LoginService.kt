@@ -27,7 +27,7 @@ class LoginService {
     if (user == null) {
       // userが存在しない
       return Response("error", "", "E001")
-    } else if("${req.password  + hash(user.salt)}" != user.password) {
+    } else if("${req.password + hash(user.salt)}" != user.password) {
       // passwordが一致しない
       return Response("error", "", "E002")
     } else {

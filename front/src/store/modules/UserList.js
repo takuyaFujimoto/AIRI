@@ -1,10 +1,5 @@
 import { getUsers } from '../../plugins/api'
-// ミスった・・性別英語やん・・
-const GENDER = {
-  male: '女性',
-  female: '男性',
-  not_applicable: '中性'
-}
+
 const state = {
   headers: [],
   items: [],
@@ -39,7 +34,7 @@ const actions = {
         { text: '性別', value: 'gender' },
         { text: 'メール', value: 'email' },
         { text: '年齢', value: 'age' },
-        { text: '出身地', value: 'from' },
+        { text: '出身地', value: 'birthplace' },
         { text: '入社日', value: 'hireDate' },
         { text: '役職', value: 'rool' },
         { text: '電話番号', value: 'tel' }
@@ -51,10 +46,10 @@ const actions = {
       hash.userId = x.user_id
       hash.name = `${x.first_name} ${x.last_name}`
       hash.phonetic = `${x.first_phonetic} ${x.last_phonetic}`
-      hash.gender = GENDER[x.gender]
+      hash.gender = x.gender
       hash.email = x.email
       hash.age = x.age
-      hash.from = x.from
+      hash.birthplace = x.birthplace
       hash.hireDate = x.hire_date
       hash.rool = x.rool
       hash.tel = x.tel
